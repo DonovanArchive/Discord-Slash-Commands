@@ -1,0 +1,33 @@
+{
+  "name": "@uwu-codes/discord-slash-commands",
+  "version": "1.0.2",
+  "description": "Some helpers for making slash commands.",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "scripts": {
+    "prepare": "rm -rf build && tsc && npm run copy-types && echo Build Finished",
+    "build": "npm run prepare",
+    "copy-types": "cp src/types.d.ts build/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UwUCode/Discord-Slash-Commands.git"
+  },
+  "author": "Donovan_DMC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/UwUCode/Discord-Slash-Commands/issues"
+  },
+  "homepage": "https://github.com/UwUCode/Discord-Slash-Commands#readme",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "eris": "^0.14.0",
+    "node-fetch": "^2.6.1"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.5.8"
+  }
+}
