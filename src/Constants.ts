@@ -18,7 +18,9 @@ export const VERSION = 1 as const;
 
 export const InteractionResponseType = {
 	PONG: 1,
+	/** @deprecated */
 	ACKNOWLEDGE: 2,
+	/** @deprecated */
 	CHANNEL_MESSAGE: 3,
 	CHANNEL_MESSAGE_WITH_SOURCE: 4,
 	ACK_WITH_SOURCE: 5
