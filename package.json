@@ -1,6 +1,6 @@
 {
   "name": "@uwu-codes/discord-slash-commands",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Some helpers for making slash commands.",
   "main": "build/index.js",
   "types": "build/index.d.ts",

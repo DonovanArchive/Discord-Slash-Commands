@@ -217,17 +217,14 @@ export default class CommandHelper {
 			});
 	}
 
-	async editOriginalInteractionResponse(interactionToken: string, type: Types.InteractionResponse["type"], data?: Types.InteractionResponse["data"]): Promise<unknown> {
+	async editOriginalInteractionResponse(interactionToken: string, data?: Types.InteractionResponse["data"]): Promise<unknown> {
 		return fetch(`https://discordapp.com/api/v8/webhooks/${this.id}/${interactionToken}/messages/@original`, {
 			method: "PATCH",
 			headers: {
 				"Authorization": `Bot ${this.token}`,
 				"Content-Type": "application/json"
 			},
-			body: JSON.stringify({
-				type,
-				data
-			})
+			body: JSON.stringify(data)
 		})
 			.then(async (res) => {
 				let b, s = await res.text();
@@ -242,17 +239,13 @@ export default class CommandHelper {
 			});
 	}
 
-	async deleteOriginalInteractionResponse(interactionToken: string, type: Types.InteractionResponse["type"], data?: Types.InteractionResponse["data"]): Promise<unknown> {
+	async deleteOriginalInteractionResponse(interactionToken: string): Promise<unknown> {
 		return fetch(`https://discordapp.com/api/v8/webhooks/${this.id}/${interactionToken}/messages/@original`, {
 			method: "DELETE",
 			headers: {
 				"Authorization": `Bot ${this.token}`,
 				"Content-Type": "application/json"
-			},
-			body: JSON.stringify({
-				type,
-				data
-			})
+			}
 		})
 			.then(async (res) => {
 				let b, s = await res.text();
